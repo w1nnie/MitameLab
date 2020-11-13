@@ -108,7 +108,7 @@ export default {
 			.card-content
 				width: 80%
 				height: 85%
-				background: whites
+				background: white
 				border-radius: 10px
 				display: flex
 				justify-content: center
