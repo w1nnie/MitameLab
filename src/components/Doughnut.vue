@@ -1,8 +1,8 @@
 <template lang="pug">
 .doughnut-container
 	.card-container
-		.card(v-for="number in cards" :style="{transform: doughnutTransform(number,time), background: background(number), zIndex: zIndex(number,time)}") {{number}}
-			.back
+		.card(v-for="number in cards" :style="{transform: doughnutTransform(number,time), background: background(number), zIndex: zIndex(number,time), filter: filter(number,time), color: background(number)}")
+			.card-content {{number}}
 </template>
 
 <script>
@@ -39,13 +39,20 @@ export default {
 				number = number - time;
 				return parseInt(Math.abs(this.cards/2 - Math.abs(number % this.cards)))
 			};
+		},
+		filter() {
+			return function (number, time) {
+				number --;
+				number = number - time;
+				return `blur(${this.cards/2 - Math.abs(this.cards/2 - Math.abs(number % this.cards))}px)`
+			}
 		}
 	},
 	methods: {
 		tick() {
 			setInterval(() => {
 				this.time ++;
-				},1000);
+				},3000);
 		}
 	},
 	mounted() {
@@ -82,27 +89,30 @@ export default {
 			background: #eee
 			transform-style: preserve-3d
 			will-change: transform
-			color: white
+			color: #555
 			transition: transform .5s ease-in-out
 			text-align: center
-			border-radius: 10px
+			border-radius: 15px
 			font-size: 40px
 			opacity: 0.99
-			// backface-visibility: hidden
+			box-shadow: 0 10px 20px #eee
+			display: flex
+			justify-content: center
+			align-items: center
 			@media only screen and (max-width: 2000px)
 				@include setSize(250px, 350px)
 
 			@media only screen and (max-width: $md)
 				@include setSize(125px, 175px)
 
-			.back
-				position: absolute
-				top: inherit
-				left: inherit
-				width: inherit
-				height: inherit
-				background: #666
-				transform: rotateY(180deg);
-				backface-visibility: hidden
+			.card-content
+				width: 80%
+				height: 85%
+				background: whites
+				border-radius: 10px
+				display: flex
+				justify-content: center
+				align-items: center
+
 
 </style>
