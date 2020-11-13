@@ -113,6 +113,9 @@ export default {
 				display: flex
 				justify-content: center
 				align-items: center
+				font-family: vdl-logojrblack, sans-serif;
+				font-weight: 900;
+				font-style: normal;
 
 
 </style>
