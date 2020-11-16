@@ -77,6 +77,7 @@ export default {
 		height: 90vh
 		perspective: 2000px
 		overflow: hidden
+		background: white
 
 
 		.card

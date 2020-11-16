@@ -1,20 +1,11 @@
 <template lang="pug">
 #app
   ml-header.header
-  body
+  .content
     top
 </template>
 
 <script>
-  (function(d) {
-    var config = {
-      kitId: 'sxg0lca',
-      scriptTimeout: 3000,
-      async: true
-    },
-    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-  })(document);
-
 
 import MlHeader from "./components/MlHeader.vue"
 import Top from "./components/Top.vue"
@@ -24,17 +15,25 @@ export default {
   components: {
     MlHeader,
     Top
+  },
+  head: {
+    script: [
+      { src: "https://use.typekit.net/sxg0lca.js" }
+    ]
   }
 }
 </script>
 
 <style scoped lang="sass">
 #app
+  width: 100%
+  height: 100%
   font-family: Avenir, Helvetica, Arial, sans-serif
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
   color: #2c3e50
-  margin-top: 60px
+  display: flex
+  flex-direction: column
 
 .header
   position: fixed
@@ -44,8 +43,15 @@ export default {
   left: 0
   background: white
   z-index: 1000
+  margin: 8px
 
-body
+.content
+  position: absolute
   width: 100%
   height: 95%
+  left: 0
+  top: calc(5vh + 16px)
+
+body
+  margin: 0
 </style>
