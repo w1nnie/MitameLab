@@ -52,7 +52,7 @@ export default {
 		tick() {
 			setInterval(() => {
 				this.time ++;
-				},3000);
+				},2000);
 		}
 	},
 	mounted() {
@@ -66,11 +66,12 @@ export default {
 @import "@/assets/media.sass"
 
 .doughnut-container
-	height: 95%
+	height: 100%
 	width: 100%
 	display: flex
 	justify-content: center
 	align-items: center
+	background: white
 
 	.card-container
 		width: 90vw
@@ -117,6 +118,5 @@ export default {
 				font-family: vdl-logojrblack, sans-serif;
 				font-weight: 900;
 				font-style: normal;
-
 
 </style>

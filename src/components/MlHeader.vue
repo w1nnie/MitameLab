@@ -1,5 +1,5 @@
 <template lang="pug">
-.hello みためラボ
+router-link.ml-header-container(to="/") みためラボ
 </template>
 
 <script>

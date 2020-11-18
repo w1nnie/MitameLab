@@ -43,14 +43,13 @@ export default {
   left: 0
   background: white
   z-index: 1000
-  margin: 8px
 
 .content
   position: absolute
   width: 100%
   height: 95%
   left: 0
-  top: calc(5vh + 16px)
+  top: 5vh
 
 body
   margin: 0
