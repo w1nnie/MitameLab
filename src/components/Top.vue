@@ -1,9 +1,10 @@
 <template lang="pug">
-.item-container
-	router-link.items(v-for="item in items" :to="item")
-router-view(v-slot="{Component}")
-	transition(name="fade")
-		component(:is="Component")
+.top-container
+	.item-container
+		router-link.items(v-for="item in items" :to="item")
+	router-view(v-slot="{Component}")
+		transition(name="fade")
+			component(:is="Component")
 
 </template>
 
@@ -26,25 +27,29 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="sass">
-.item-container
-	display: flex
-	justify-content: center
-	align-items: center
-
+.top-container
 	width: 100%
 	height: 100%
-	background: white
-	position: absolute
 
-	.items
-		width: 10vw
-		height: 10vw
-		background: pink
-		margin: 2vw
+	.item-container
+		display: flex
+		justify-content: center
+		align-items: center
+
+		width: 100%
+		height: 100%
+		background: white
+		position: absolute
+
+		.items
+			width: 10vw
+			height: 10vw
+			background: pink
+			margin: 2vw
 
 .fade-enter-active, .fade-leave-active
   transition: all 1s ease
 
-.fade-enter, .fade-leave-to
+.fade-enter-from, .fade-leave-to
   opacity: 0
 </style>

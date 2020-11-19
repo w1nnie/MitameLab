@@ -1,17 +1,19 @@
 import {createWebHistory, createRouter} from "vue-router";
-// import Top from "@/components/Top.vue";
+import Top from "@/components/Top.vue";
 import Doughnut from "@/components/Doughnut.vue";
 import IllustMaskDiagonalLine from "@/components/IllustMaskDiagonalLine.vue";
 
 const routes = [
     {
+        path: "/",
+        component: Top
+    },
+    {
         path: "/doughnut",
-        name: "Doughnut",
         component: Doughnut
     },
     {
         path: "/illustMaskDL",
-        name: "IllustMaskDiagonalLine",
         component: IllustMaskDiagonalLine
     }
 ];
