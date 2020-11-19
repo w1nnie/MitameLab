@@ -48,7 +48,7 @@ export default {
 			margin: 2vw
 
 .fade-enter-active, .fade-leave-active
-  transition: all 1s ease
+  transition: opacity 2s ease
 
 .fade-enter-from, .fade-leave-to
   opacity: 0

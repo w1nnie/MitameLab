@@ -71,7 +71,6 @@ export default {
 	display: flex
 	justify-content: center
 	align-items: center
-	background: white
 
 	.card-container
 		width: 90vw
@@ -79,7 +78,6 @@ export default {
 		perspective: 2000px
 		overflow: hidden
 		background: white
-
 
 		.card
 			@mixin setSize($w, $h)
@@ -96,7 +94,6 @@ export default {
 			text-align: center
 			border-radius: 15px
 			font-size: 40px
-			opacity: 0.99
 			box-shadow: 0 10px 20px #eee
 			display: flex
 			justify-content: center
