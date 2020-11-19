@@ -66,6 +66,9 @@ export default {
 @import "@/assets/media.sass"
 
 .doughnut-container
+	position: absolute
+	top: 0
+	left: 0
 	height: 100%
 	width: 100%
 	display: flex
@@ -103,6 +106,7 @@ export default {
 
 			@media only screen and (max-width: $md)
 				@include setSize(125px, 175px)
+			
 
 			.card-content
 				width: 80%
