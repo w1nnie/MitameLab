@@ -6,15 +6,17 @@ import IllustMaskDiagonalLine from "@/components/IllustMaskDiagonalLine.vue";
 const routes = [
     {
         path: "/",
-        component: Top
-    },
-    {
-        path: "/doughnut",
-        component: Doughnut
-    },
-    {
-        path: "/illustMaskDL",
-        component: IllustMaskDiagonalLine
+        component: Top,
+        children: [
+            {
+                path: "doughnut",
+                component: Doughnut
+            },
+            {
+                path: "illustMaskDL",
+                component: IllustMaskDiagonalLine
+            }
+        ]
     }
 ];
 const router = createRouter({

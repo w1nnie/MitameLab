@@ -15,19 +15,10 @@ export default {
 
 .illust-mask-diagonal-line-container
 	position: absolute
-	top: 0
-	left: 0
-	height: 100%
-	width: 100%
-	display: flex
-	justify-content: center
-	align-items: center
+	left: 5vw
+	top: 2.5vh
+	width: 90vw
+	height: 90vh
 	background: yellow
-
-	.po
-		width: 90vw
-		height: 90vh
-		background: blue
-
 
 </style>

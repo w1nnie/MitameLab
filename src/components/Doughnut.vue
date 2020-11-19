@@ -1,8 +1,7 @@
 <template lang="pug">
-.doughnut-container
-	.card-container
-		.card(v-for="number in cards" :style="{transform: doughnutTransform(number,time), background: background(number), zIndex: zIndex(number,time), filter: filter(number,time), color: background(number)}")
-			.card-content {{number}}
+.card-container
+	.card(v-for="number in cards" :style="{transform: doughnutTransform(number,time), background: background(number), zIndex: zIndex(number,time), filter: filter(number,time), color: background(number)}")
+		.card-content {{number}}
 </template>
 
 <script>
@@ -65,59 +64,53 @@ export default {
 <style scoped lang="sass">
 @import "@/assets/media.sass"
 
-.doughnut-container
+
+.card-container
 	position: absolute
-	top: 0
-	left: 0
-	height: 100%
-	width: 100%
-	display: flex
-	justify-content: center
-	align-items: center
+	left: 5vw
+	top: 2.5vh
+	width: 90vw
+	height: 90vh
+	perspective: 2000px
+	overflow: hidden
+	background: white
 
-	.card-container
-		width: 90vw
-		height: 90vh
-		perspective: 2000px
-		overflow: hidden
-		background: white
+	.card
+		@mixin setSize($w, $h)
+			top: calc(50% - #{$h} / 2)
+			left: calc(50% - #{$w} / 2)
+			width: $w
+			height: $h
+		position: absolute
+		background: #eee
+		transform-style: preserve-3d
+		will-change: transform
+		color: #555
+		transition: transform .5s ease-in-out
+		text-align: center
+		border-radius: 15px
+		font-size: 40px
+		box-shadow: 0 10px 20px #eee
+		display: flex
+		justify-content: center
+		align-items: center
+		@media only screen and (max-width: 2000px)
+			@include setSize(250px, 350px)
 
-		.card
-			@mixin setSize($w, $h)
-				top: calc(50% - #{$h} / 2)
-				left: calc(50% - #{$w} / 2)
-				width: $w
-				height: $h
-			position: absolute
-			background: #eee
-			transform-style: preserve-3d
-			will-change: transform
-			color: #555
-			transition: transform .5s ease-in-out
-			text-align: center
-			border-radius: 15px
-			font-size: 40px
-			box-shadow: 0 10px 20px #eee
+		@media only screen and (max-width: $md)
+			@include setSize(125px, 175px)
+		
+
+		.card-content
+			width: 80%
+			height: 85%
+			background: white
+			border-radius: 10px
 			display: flex
 			justify-content: center
 			align-items: center
-			@media only screen and (max-width: 2000px)
-				@include setSize(250px, 350px)
-
-			@media only screen and (max-width: $md)
-				@include setSize(125px, 175px)
-			
-
-			.card-content
-				width: 80%
-				height: 85%
-				background: white
-				border-radius: 10px
-				display: flex
-				justify-content: center
-				align-items: center
-				font-family: vdl-logojrblack, sans-serif;
-				font-weight: 900;
-				font-style: normal;
+			font-family: vdl-logojrblack, sans-serif;
+			font-weight: 900;
+			font-style: normal;
 
 </style>

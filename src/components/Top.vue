@@ -48,9 +48,9 @@ export default {
 			margin: 2vw
 
 .fade-enter-active, .fade-leave-active
-  transition: all 1s ease
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out
 
 .fade-enter-from, .fade-leave-to
-  opacity: 0
-  transform: scale(0)
+  opacity: 0.5
+  transform: scale(0.2)
 </style>
