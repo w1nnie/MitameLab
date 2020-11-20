@@ -47,10 +47,17 @@ export default {
 			background: pink
 			margin: 2vw
 
-.fade-enter-active, .fade-leave-active
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out
+.fade-enter-active
+  transition: opacity 0.5s ease-out, transform 0.5s cubic-bezier(.45,1.15,.78,1.1)
 
-.fade-enter-from, .fade-leave-to
+.fade-leave-active
+  transition: opacity 0.3s ease-out, transform 0.3s cubic-bezier(.45,1.15,.78,1.1)
+
+.fade-enter-from
   opacity: 0.5
   transform: scale(0.2)
+
+.fade-leave-to
+  opacity: 0
+  transform: scale(0.8)
 </style>

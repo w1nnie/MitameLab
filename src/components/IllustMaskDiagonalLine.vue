@@ -1,11 +1,18 @@
 <template lang="pug">
 .illust-mask-diagonal-line-container
-	.po
+	img.po(:src="img")
 </template>
 
 <script>
+import steria from "@/assets/steria_sd.png";
+
 export default {
-	name: 'IllustLineDiagonalLine'
+	name: 'IllustLineDiagonalLine',
+	data() {
+		return {
+			img: steria
+		}
+	}
 }
 </script>
 
@@ -19,6 +26,14 @@ export default {
 	top: 2.5vh
 	width: 90vw
 	height: 90vh
-	background: yellow
+	background: white
+	display: flex
+	justify-content: center
+	align-items: center
+
+	.po
+		width: 60%
+		height: auto
+
 
 </style>
