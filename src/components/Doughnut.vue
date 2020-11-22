@@ -63,17 +63,12 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="sass">
 @import "@/assets/media.sass"
+@import "@/assets/preset.sass"
 
 
 .card-container
-	position: absolute
-	left: 5vw
-	top: 2.5vh
-	width: 90vw
-	height: 90vh
+	@include default-mordal
 	perspective: 2000px
-	overflow: hidden
-	background: white
 
 	.card
 		@mixin setSize($w, $h)
@@ -95,10 +90,10 @@ export default {
 		justify-content: center
 		align-items: center
 		@media only screen and (max-width: 2000px)
-			@include setSize(250px, 350px)
+			@include setSize(200px, 280px)
 
 		@media only screen and (max-width: $md)
-			@include setSize(125px, 175px)
+			@include setSize(100px, 140px)
 		
 
 		.card-content

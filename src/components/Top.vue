@@ -48,10 +48,10 @@ export default {
 			margin: 2vw
 
 .fade-enter-active
-  transition: opacity 0.5s ease-out, transform 0.5s cubic-bezier(.45,1.15,.78,1.1)
+  transition: opacity 0.4s ease-out, transform 0.4s cubic-bezier(.55,1.48,.82,1.19)
 
 .fade-leave-active
-  transition: opacity 0.3s ease-out, transform 0.3s cubic-bezier(.45,1.15,.78,1.1)
+  transition: opacity 0.3s ease-out, transform 0.3s cubic-bezier(.55,1.48,.82,1.19)
 
 .fade-enter-from
   opacity: 0.5

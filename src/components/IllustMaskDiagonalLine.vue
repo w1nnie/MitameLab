@@ -1,16 +1,17 @@
 <template lang="pug">
 .illust-mask-diagonal-line-container
-	img.po(:src="img")
+	.img-container
+		img.steria(v-for="item in 5" :src="imageUrl")
 </template>
 
 <script>
-import steria from "@/assets/steria_sd.png";
+import imageUrl from "@/assets/steria_sd.png";
 
 export default {
 	name: 'IllustLineDiagonalLine',
 	data() {
 		return {
-			img: steria
+			imageUrl: imageUrl
 		}
 	}
 }
@@ -19,21 +20,40 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="sass">
 @import "@/assets/media.sass"
+@import "@/assets/preset.sass"
+
+$n: 5
 
 .illust-mask-diagonal-line-container
-	position: absolute
-	left: 5vw
-	top: 2.5vh
-	width: 90vw
-	height: 90vh
-	background: white
+	@include default-mordal
 	display: flex
 	justify-content: center
 	align-items: center
+	overflow: hidden
 
-	.po
-		width: 60%
-		height: auto
+	.img-container
+		position:relative
+		
+		.steria
+			position: absolute
+			width: 60%
+			height: auto
+			top: calc(50vh - 55%)
+			left: calc(50vw - 43%)
 
+			@for $i from 1 through $n
+				&.steria:nth-of-type(#{$i})
+					mask-image: linear-gradient(to bottom, transparent 0% calc((#{$i} - 1) * 20%), black calc((#{$i} - 1) * 20%) calc((#{$i} - 1) * 20% + 20%), transparent calc((#{$i} - 1) * 20% + 20%))
+					animation: slideIn 2s ease 1s infinite
+// @keyframes slideIn
+// 	0%
+// 		transform: translateX(#{$i}%)
+// 		opacity: 0
+// 	10%
+// 		opacity: 1
+
+// 	20%
+// 		transform: translateX(0%)
+// 		opacity: 1
 
 </style>
