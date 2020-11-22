@@ -42,7 +42,7 @@ $n: 10
 		
 		.steria
 			position: absolute
-			width: 60%
+			width: 600px
 			height: auto
 			top: calc(50vh - 350px)
 			left: calc(50vw - 350px)
@@ -59,7 +59,7 @@ $n: 10
 						3%
 							opacity: 1
 
-						6%
+						8%
 							transform: translateX(0%)
 							opacity: 1
 
