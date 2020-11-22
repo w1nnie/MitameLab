@@ -1,11 +1,11 @@
 <template lang="pug">
 .illust-mask-diagonal-line-container
 	.img-container
-		img.steria(v-for="item in 5" :src="imageUrl")
+		img.steria(v-for="item in 10" :src="imageUrl")
 </template>
 
 <script>
-import imageUrl from "@/assets/steria_sd.png";
+import imageUrl from "@/assets/steria_sd.jpg";
 
 export default {
 	name: 'IllustLineDiagonalLine',
@@ -22,7 +22,13 @@ export default {
 @import "@/assets/media.sass"
 @import "@/assets/preset.sass"
 
-$n: 5
+$n: 10
+@mixin tls($i)
+	$x: abs($n / 2 + 0.5 - $i)
+	@if $i % 2 == 1
+		transform: translateX(calc(50% * #{$x}))
+	@else
+		transform: translateX(calc(-50% * #{$x}))
 
 .illust-mask-diagonal-line-container
 	@include default-mordal
@@ -43,17 +49,19 @@ $n: 5
 
 			@for $i from 1 through $n
 				&.steria:nth-of-type(#{$i})
-					mask-image: linear-gradient(to bottom, transparent 0% calc((#{$i} - 1) * 20%), black calc((#{$i} - 1) * 20%) calc((#{$i} - 1) * 20% + 20%), transparent calc((#{$i} - 1) * 20% + 20%))
-					animation: slideIn 2s ease 1s infinite
-// @keyframes slideIn
-// 	0%
-// 		transform: translateX(#{$i}%)
-// 		opacity: 0
-// 	10%
-// 		opacity: 1
+					mask-image: linear-gradient(to bottom, transparent 0% calc((#{$i} - 1) * 100% / #{$n}), black calc((#{$i} - 1) * 100% / #{$n}) calc((#{$i} - 1) * 100% / #{$n} + 100% / #{$n}), transparent calc((#{$i} - 1) * 100% / #{$n} + 100% / #{$n}))
+					animation: slideIn-#{$i} 2s ease-out 1s infinite
+					@keyframes slideIn-#{$i}
+						0%
+							@include tls($i)
+							opacity: 0
+						3%
+							opacity: 1
 
-// 	20%
-// 		transform: translateX(0%)
-// 		opacity: 1
+						7%
+							transform: translateX(0%)
+							opacity: 1
+
+
 
 </style>
