@@ -1,24 +1,7 @@
-# mitame-lab
+- 原義カルーセル
 
-## Project setup
-```
-npm install
-```
+https://twitter.com/wh_negi/status/1327442008357568512
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+- 千切りキャラ
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+https://twitter.com/wh_negi/status/1330438596302540803
